@@ -2,8 +2,8 @@
   "manifest_version": 2,
 
   "name": "Zen Comments",
-  "description": "Pay no mind to the haters.",
-  "version": "1.0",
+  "description": "Bob-Ross-ify the internet comment section",
+  "version": "0.1.0",
 
   "browser_action": {
     "default_icon": "icon.png",
@@ -11,5 +11,12 @@
   },
   "permissions": [
     "activeTab"
+  ],
+  "content_scripts": [
+    {
+        "matches": ["*://*/*"],
+        "js": ["zencomments.js"],
+        "run_at": "document_end"
+    }
   ]
 }
